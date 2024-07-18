@@ -40,3 +40,31 @@ function matchingStrings(stringList, queries) {
        return result.push(count);
        
    }
+
+
+
+
+//Linked list Head node
+
+function printLinkedList(head){
+    
+   
+    let current = head;
+    
+    while(current !== null){
+         console.log(current.data);
+         current = current.next;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
