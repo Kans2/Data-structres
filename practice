@@ -5,3 +5,15 @@ calculate sum  let sum = arr[i][j] + arr[i][j+1] + arr[i][j+2] +
                       arr[i+1][j+1] +
                       arr[i+2][j] + arr[i+2][j+1] + arr[i+2][j+2];
 
+
+
+//Rotate array problem
+
+         function Rotateleft(d,arr){
+
+          let n = arr.length;
+          d = d % n;
+
+          let rotatearray = arr.slice(d).concat(arr.slice(0,d));
+           return rotatearray;
+}
