@@ -17,3 +17,26 @@ calculate sum  let sum = arr[i][j] + arr[i][j+1] + arr[i][j+2] +
           let rotatearray = arr.slice(d).concat(arr.slice(0,d));
            return rotatearray;
 }
+
+//Array sparse problem same value index number
+
+function matchingStrings(stringList, queries) {
+    // Write your code here
+    
+   let result  = [];
+   
+   
+   
+   for(let query of queries){
+       
+       let count  = 0;
+       
+       for(let str of stringList){
+           
+           if( str === query){
+               count ++;
+           }
+       }
+       return result.push(count);
+       
+   }
