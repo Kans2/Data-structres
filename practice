@@ -88,6 +88,8 @@ function printLinkedList(head){
                       }
                    
                 }
+
+
 ///           maximum valueb return
                  current_value = 0;
                  max_value = 0;
@@ -101,6 +103,42 @@ function printLinkedList(head){
 
    
 
+
+
+//DICTIONARIES (OR) Hash map
+
+import java.util.*;
+import java.io.*;
+
+class Solution {
+    public static void main(String []argh){
+        Scanner in = new Scanner(System.in);
+        Map<String, Integer> phoneBook = new HashMap<>();
+        
+        int n = in.nextInt();
+        in.nextLine();  // Consume the newline character
+        
+        // Read and store the phone book entries
+        for (int i = 0; i < n; i++) {
+            String name = in.next();
+            int number = in.nextInt();
+            in.nextLine();  // Consume the newline character
+            phoneBook.put(name, number);
+        }
+        
+        // Handle queries
+        while (in.hasNext()) {
+            String query = in.next();
+            if (phoneBook.containsKey(query)) {
+                System.out.println(query + "=" + phoneBook.get(query));
+            } else {
+                System.out.println("Not found");
+            }
+        }
+        
+        in.close();
+    }
+}
 
 
 
