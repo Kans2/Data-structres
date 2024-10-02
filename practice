@@ -140,8 +140,22 @@ class Solution {
     }
 }
 
+///hashmap example use
 
+HashMap<String, Integer> group1 = new HashMap<>();
+group1.put("Alice", 1);   // Alice is in Group 1 with desk number 1
+group1.put("Bob", 2);     // Bob is in Group 1 with desk number 2
+group1.put("Charlie", 3); // Charlie is in Group 1 with desk number 3
 
+String[] group2 = {"Eve", "Charlie", "Alice"};  // Group 2 students
+
+for (String s : group2) {
+    if (group1.containsKey(s)) {
+        System.out.println(s + " is in both groups, with desk number " + group1.get(s) + " in Group 1.");
+    } else {
+        System.out.println(s + " is only in Group 2.");
+    }
+}
 
 
 
