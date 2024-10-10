@@ -37,7 +37,7 @@ public class Main {
             sample[i - 1] = sample[i];
         }
         
-    length--;
+       length--;
         for (int i =0; i< length; i++) {
             
             System.out.println("index is"+ " "+ i + " " + "contains" + sample[i]);
