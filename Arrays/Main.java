@@ -1,4 +1,11 @@
-class Solution {
+public class Main{
+
+
+    public static void main(String[] args) {
+        System.out.print(dublicateZeros());
+        
+    }
+
     public void duplicateZeros(int[] arr) {
         
         
@@ -32,7 +39,7 @@ class Solution {
     }
 }
 
-
+/* 
 
 //adding elements in the array
 
@@ -47,3 +54,5 @@ for(int i = 0; i < 6; i++) {
     intArray[length] = i;
     length++;
 }
+
+ */

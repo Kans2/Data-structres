@@ -1,4 +1,5 @@
 class Solution {
+    
     public int[] sortArrayByParity(int[] nums) {
         int write = 0; // Pointer to place the next element
 

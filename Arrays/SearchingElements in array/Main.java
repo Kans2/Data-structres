@@ -4,9 +4,9 @@ public class Main {
 
     int[] array ={3,4,56,8};
     int length = 3;
-    int element = 7;
+    int element = 56;
 
-    System.err.println(linearSearch(array, length, element));
+    System.out.println(linearSearch(array, length, element));
         
     }
     public static boolean linearSearch(int[] array, int length,int element){
