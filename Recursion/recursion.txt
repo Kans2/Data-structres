@@ -1,0 +1,15 @@
+call itsels again and again
+why
+periya problema chinna chinna problem solve pani overall big problem solve
+
+1. Base case
+2. Recursion case
+
+ex: factorial
+
+Advantage
+ - easy to read and write
+ -debug easy 
+
+ //Stack structre like call stack Lifo
+ 

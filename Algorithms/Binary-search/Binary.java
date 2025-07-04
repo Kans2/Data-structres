@@ -50,12 +50,12 @@ public class Binary {
     }
 
     public static void main(String[] args) {
-        int[] sortedArray = {2, 5, 8, 12, 16, 23, 38, 56, 72, 91};
-        int target = 38;
+        int[] sortedArray = {2, 5, 8, 12, 16, 23, 38, 56, 72, 91,45,88,77,101,102,103,104};
+        int target = 104;
         int index = binarySearch(sortedArray, target);
 
         if (index != -1) {
-            System.out.println("Element found at index " + index);
+            System.out.println("Element found at index " + index + " element is " +target);
         } else {
             System.out.println("Element not found in the array");
         }
