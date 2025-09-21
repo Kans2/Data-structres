@@ -1,4 +1,5 @@
 // User function Template for Java
+//trial-and-error approach 
 class Solution {
     static String isSumOfTwo(int N) {
        int count = 0;
