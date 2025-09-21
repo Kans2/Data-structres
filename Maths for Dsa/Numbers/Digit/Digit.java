@@ -14,19 +14,20 @@ public static void main(String[] args) {
         }
 
      
-       int count = 0;
-       int sum =0;
-        while( n != 0){
+      // int count = 0;
+       //int sum =0;
+        while( n > 0){
            
-            int d = n % 10;
+            int d = n % 10; //8 
             System.out.println("the digits are .." + d);
-            sum += d;
+            //sum += d;
             n = n / 10;
 
 
+
         }
-        
-        return sum;
+
+        return 0;
     
     }
 }

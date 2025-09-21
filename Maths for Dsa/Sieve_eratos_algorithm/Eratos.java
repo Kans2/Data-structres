@@ -14,18 +14,20 @@ public class Eratos {
     }
 
     public static int  eratos (int N){
-            
+        
+        //array N size create pananum
         boolean [] seive = new boolean[N + 1];
 
         int count = 0;
-
+        
+        //set all numbers true in array
         for(int i=0; i<= N; i++){
-            seive[i] = true;
+            seive[i] = true;  
         }
 
         for(int i=2; i * i <= N; i++){
              if(seive[i]){
-                for(int mul = i * i; mul<=N; mul+= i){
+                for(int mul = i * i; mul<=N; mul+= i){// 4 + 2= 6
                      seive[mul] = false;
                 }
              }

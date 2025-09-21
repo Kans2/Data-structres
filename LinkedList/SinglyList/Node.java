@@ -1,26 +1,28 @@
 
 //getter and setter method
 public class Node {
-	private String data;
-	private Node next;
+	 private String data;
+	 private Node next;
 
 
-	public Node(String data){
-		this.data=data;
-	}
+	 public  Node(String data){
+         this.data= data;
+	 }
 
-	public void setData(String data){
+
+	 public void setData(String data){
 		this.data = data;
-	}
+	 }
 
-	public void setNext(Node node){
-		this.next = node;
-	}
-    
-	public String getData(){
-		return this.data;
-	}
-	public Node getNext(){
+	 public void setNext(Node node){
+		this.next= node;
+	 }
+
+	 public String getData(){
+          return this.data;
+	 }
+
+	 public Node getNext(){
 		return this.next;
-	}
+	 }
 }

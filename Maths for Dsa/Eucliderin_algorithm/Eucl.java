@@ -4,8 +4,8 @@ public class Eucl {
  
     
    public static void main(String[] args) {
-       int a = 28;
-       int b = 20;
+       int a = 5;
+       int b = 10;
 
        System.out.println(gcd(a,b));
    }

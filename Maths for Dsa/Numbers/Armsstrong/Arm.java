@@ -1,7 +1,7 @@
 public class Arm {
     
    public static void main(String[] args) {
-       int n = 111;
+       int n = 153;
 
        System.out.println(isarm(n));
    }
