@@ -1,0 +1,12 @@
+//no of lines = no of rows
+//no of columns = no of colums
+
+
+row - outer loop that timesku run
+column - inner loop that timesku run pananum
+stars or numbers - we should print inside the inner loop 
+1st row or each row nadvla space vidnum - like after col 
+
+how runs nested loops
+
+> first outer loop ula pogum then inner loop fulla run agi mudichi thn outer loop again vrum 

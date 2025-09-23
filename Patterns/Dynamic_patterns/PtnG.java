@@ -8,7 +8,8 @@ public class PtnG {
         for(int row=1; row<=n; row++){
             
             for(int col=1; col <= row; col++){
-                System.out.print(printvalue++);
+                System.out.print(printvalue + " ");
+                printvalue++;
             }
             System.out.println();
         }

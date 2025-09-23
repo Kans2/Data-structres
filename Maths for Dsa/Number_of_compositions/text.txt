@@ -1,0 +1,16 @@
+//like possible ways until n th number
+//composite one 
+//counting the possible of compinations
+// i + i = n;  maximum possiblities for n ;
+The number of compositions of 
+//𝑁
+N is 
+2
+𝑁
+−
+1
+2
+N−1 
+
+//The number of compositions  = 2->  N -1  //means that [ 1 | 1 |  1 |  1 ] 
+//if we go that we have two choices like do or dont means add or delete 

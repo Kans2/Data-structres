@@ -1,0 +1,43 @@
+Example 1:
+
+Input:
+N = "34", M = "25"
+Output:
+0
+Explanation:
+There are no carries when N and M
+are added.
+Example 2:
+
+Input:
+N = "4634", M = "1757"
+Output:
+2
+Explanation:
+There are 2 carries when N and M
+are added.
+
+What is a carry?
+
+When adding two digits, if the sum ≥ 10, we write down the unit digit and carry over the tens digit to the next higher place.
+
+Each time this happens, it counts as 1 carry.
+
+Example 1:
+
+Input:
+N = "34", M = "25"
+Output:
+0
+Explanation:
+There are no carries when N and M
+are added.
+Example 2:
+
+Input:
+N = "4634", M = "1757"
+Output:
+2
+Explanation:
+There are 2 carries when N and M
+are added.
