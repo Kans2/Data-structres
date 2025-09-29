@@ -1,0 +1,583 @@
+//to find binary numbers
+//The Two's Complement method is used to represent negative numbers in binary and is defined by a simple two-step process:
+
+−n= (Invert all bits of n) +1
+
+Step 1: Invert the Bits (One's Complement)
+Step 2: Add 1 to the Inverted Result
+
+1 2 3 4 5 6 7 8
+0 0 0 0 1 1 0 0
+1  1 1 1 0 0 1 1(One's Complement) 
+               
+               +1
+1  1  1  1  0  1  0  0
+−n	1	1	1	1	0	1	0	0	(Two's Complement)
+
+
+
+
+
+
+
+( ) 2 
+     2 | 10
+      5|  
+
+Binary representation
+
+Computers store numbers in binary (0/1).
+
+Each bit position = power of 2.
+
+Divide by 2 method for converting a decimal number to binary
+
+
+Binary-to-Decimal Conversion,
+ex:1×8+1×4+0×2+1×1=13 is calculated from 00001101
+
+
+
+
+1.2 Signed numbers (two’s complement)
+Positive: same as unsigned.
+Negative: two’s complement → invert bits + add 1.
+Example:
+-5 (8-bit) = 11111011
+Check: Invert 00000101 → 11111010, add 1 → 11111011
+
+
+👉 This explains why n & -n isolates the lowest set bit (we’ll use this later).
+
+
+1.3 Bit length and size
+For an n-bit integer, values range:
+Unsigned: 0 → 2ⁿ - 1
+Signed: -2ⁿ⁻¹ → 2ⁿ⁻¹ - 1
+Example: 8-bit signed: -128 → 127
+
+
+1.4 Shift operators
+n << k: shifts left by k bits (multiplies by 2ᵏ).
+n >> k: shifts right by k bits (integer division by 2ᵏ).
+⚠️ Signed right shift depends on language:
+In C++/Java: keeps sign bit (>> = arithmetic shift).
+Python: only has arithmetic shift (preserves sign).
+
+
+Represent -6 in 8-bit two’s complement.
+
+
+The Role of Two's Complement
+The entire explanation hinges on how a negative number, like −n, is mathematically defined in binary using two's complement:
+−n=(Invert all bits of n)+1
+
+
+
+
+You are asking for a clear explanation of why the bitwise operation n & (−n) results in a value that isolates the lowest (rightmost) set bit of the number n, using the concept of Two's Complement representation for negative numbers.
+
+The Role of Two's Complement
+The entire explanation hinges on how a negative number, like −n, is mathematically defined in binary using two's complement:
+
+−n=(Invert all bits of n)+1
+Step-by-Step Explanation: n & (−n)
+Let's use a small example, n=12, and see how the operation n & (−n) works:
+
+Operation	8-bit Binary Representation	Decimal Value
+n	00001100	12
+−n	11110100	−12
+Result	00000100	4
+
+
+//practice 6  Twos Compliment  (110)2
+
+  2 | 6 
+  2 | 3   0
+  2 | 1   1
+          1
+
+
+1 2 3 4 5 6 7 8
+
+0 0 0 0 0 1  1 0
+
+invert
+            1
+1 1 1 1 1 0 0 1
+             +1
+1 1  1  1 1  0  1  0
+
+
+/////////// SHIFT OPERATOR ////////////
+
+The shift operators (<< and >>) are binary operators that move all the bits of a number to the left or right by a specified number of positions. They are fundamental to low-level programming and are much faster than standard multiplication or division when working with powers of two.
+
+
+
+
+The shift operators (<< and >>) are binary operators that move all the bits of a number to the left or right by a specified number of positions. They are fundamental to low-level programming and are much faster than standard multiplication or division when working with powers of two.
+
+1. Left Shift Operator (n≪k)
+The left shift operator moves all bits in the number n to the left by k positions.
+
+Feature	Description
+Operation	Bits shift left; zeros (0's) are inserted on the right side.
+Effect	Equivalent to multiplying the number n by 2 
+k
+ .
+Formula	n×2 
+k
+ 
+Lost Bits	The leftmost bits are shifted out and discarded.
+
+///Steps
+I can see how the formatting of the example made it confusing! Let's break down the Left Shift operation (n≪k) and the associated multiplication by powers of 2.
+
+The core idea is: Shifting a bit pattern left by k places is the same as multiplying its value by 2 
+k
+ .
+
+1. Initial State: n=5
+In 8-bit binary, n=5 is represented as 00000101.
+
+To confirm this value, we use the place values (powers of 2) from right to left:
+
+2 
+7
+ 	2 
+6
+ 	2 
+5
+ 	2 
+4
+ 	2 
+3
+ 	2 
+2
+ 	2 
+1
+ 	2 
+0
+ 
+128	64	32	16	8	4	2	1
+0	0	0	0	0	1	0	1
+
+Process:
+The operation is a Left Shift by k=2 bits. Every digit moves two places to the left, and two zeros are inserted on the right side.
+
+base on k the binary  number shift left and add last 0 
+Original:  
+00000101
+
+   
+Bits
+ 
+Shifted:  
+00010100
+
+ 
+Bits
+
+
+3. The Result: New Decimal Value
+Now, let's look at the new binary number, 00010100, and calculate its decimal value using the place values again:
+
+2 
+7
+ 	2 
+6
+ 	2 
+5
+ 	2 
+4
+ 	2 
+3
+ 	2 
+2
+ 	2 
+1
+ 	2 
+0
+ 
+128	64	32	16	8	4	2	1
+0	0	0	1	0	1	0	0
+
+Export to Sheets
+Decimal value=(1×16)+(0×8)+(1×4)+(0×2)+(0×1)=16+4=20
+Conclusion
+The result of the bit shift is 20. This confirms the multiplication shortcut:
+
+5≪2≡5×2 
+2
+ =5×4=20
+
+
+ ///////Right Shift Operator
+ 1. Initial State: n=5
+In 8-bit binary, n=5 is 00000101.
+
+2. The Shift Operation: 5≫2
+We'll perform a Right Shift by k=2 bits. Every digit moves two places to the right, the rightmost two bits (01) are discarded, and two zeros are inserted on the left.
+
+Original: 00000101
+Shifted:  
+New Zeros
+
+00
+​
+ 
+​
+  
+Shifted Bits
+
+000001
+​
+ 
+​
+  
+Discarded
+
+01
+​
+ 
+​
+ ⟶00000001
+3. The Result: New Decimal Value
+Now, let's look at the new binary number, 00000001, and calculate its decimal value:
+
+2 
+7
+ 	2 
+6
+ 	2 
+5
+ 	2 
+4
+ 	2 
+3
+ 	2 
+2
+ 	2 
+1
+ 	2 
+0
+ 
+128	64	32	16	8	4	2	1
+0	0	0	0	0	0	0	1
+
+Export to Sheets
+Decimal value=(1×1)=1
+Conclusion
+The result of the bit shift is 1. This confirms the integer division shortcut:
+
+5≫2≡⌊ 
+2 
+2
+ 
+5
+​
+ ⌋=⌊ 
+4
+5
+​
+ ⌋=⌊1.25⌋=1
+
+
+
+
+2.  What is 37 << 2 and 37 >> 3?
+ 37 << k - left shifts
+
+
+
+37 binary number
+
+2 
+7
+ 	2 
+6
+ 	2 
+5
+ 	2 
+4
+ 	2 
+3
+ 	2 
+2
+ 	2 
+1
+ 	2 
+0
+
+                      
+ 
+128	 64	32	16	8	4	2	1
+
+0   0  1  0  0  1  0  1
+
+
+2^7    2^6   2^5   2^4   2^3   2^2   2^1    2^0
+128     64    32    16    8     4     2      1
+1  0   0  1               0    1     0     0
+               128   0 0     16      0    4     0      0
+
+
+148
+                       
+128     64    32    16    8     4     2      1
+1 0 1 0 0 1 0 0
+
+   128  0 32 0  0  4 0  0  = 164 
+
+
+What range can a 16-bit signed integer store?
+
+
+1. The Total Number of Possible Values (2 n)
+For an n-bit integer, each of the n bit positions can hold one of two values (0 or 1).
+
+Total Combinations: The total number of unique binary patterns (combinations) that can be represented is 2×2×⋯×2 (n times), which is 2 
+n
+ .
+
+For an 8-bit integer (n=8), the total number of unique patterns is 2 8 =256 distinct values.
+
+
+1. The Total Number of Possible Values (2 
+n
+ )
+For an n-bit integer, each of the n bit positions can hold one of two values (0 or 1).
+
+Total Combinations: The total number of unique binary patterns (combinations) that can be represented is 2×2×⋯×2 (n times), which is 2 
+n
+ .
+
+For an 8-bit integer (n=8), the total number of unique patterns is 2 
+8
+ =256 distinct values.
+
+2. Unsigned Integer Range (All Positive)
+An unsigned integer uses all 2 
+n
+  unique bit patterns to represent non-negative (zero and positive) numbers.
+
+Smallest Value (0): The smallest number is represented by all bits being 0 (e.g., 0000 0000 for 8 bits). This value is 0.
+
+Largest Value (2 
+n
+ −1): The largest number is represented by all bits being 1 (e.g., 1111 1111 for 8 bits). Since there are 2 
+n
+  total values, and the count starts at 0, the largest value is 2 
+n
+ −1.
+
+Example: 8-bit Unsigned (n=8)
+Range: 0→2 
+8
+ −1=0→256−1=0→255.
+
+3. Signed Integer Range (Using Two's Complement)
+A signed integer uses the Most Significant Bit (MSB), the leftmost bit, to represent the sign of the number:
+
+0 in the MSB means the number is positive or zero.
+
+1 in the MSB means the number is negative.
+
+The standard way to represent negative numbers is called Two's Complement. This scheme divides the total 2 
+n
+  patterns almost exactly in half: one half for zero/positives, and the other half for negatives.
+
+Maximum Positive Value (2 
+n−1
+ −1)
+Since one bit is reserved for the sign, only the remaining n−1 bits are available to represent the magnitude.
+
+The total unique patterns for positive numbers (including zero) is 2 
+n−1
+ .
+
+The largest positive value occurs when the sign bit is 0 and all other n−1 bits are 1. This maximum value is 2 
+n−1
+ −1.
+
+Minimum Negative Value (−2 
+n−1
+ )
+The negative range starts at −1 and goes down to the most negative number.
+
+The most negative value is represented by a 1 in the MSB, followed by all n−1 zeros. This value is −2 
+n−1
+ .
+
+Example: 8-bit Signed (n=8)
+Here, n−1=7.
+
+Maximum Positive Value: 2 
+8−1
+ −1=2 
+7
+ −1=128−1=127.
+
+Binary: 0111 1111 (The MSB '0' means positive).
+
+Minimum Negative Value: −2 
+8−1
+ =−2 
+7
+ =−128.
+
+Binary: 1000 0000 (The MSB '1' means negative).
+
+Range: −128→127 (a total of 256 values: 127 positive, 128 negative, and 1 zero).
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ A 16-bit signed integer can store values in the range of −32,768 to 32,767.
+
+You can figure this out using the formulas that define the range for a signed integer based on its bit length (n).
+
+Step-by-Step Explanation
+1. Identify the Bit Length and Formula
+A 16-bit integer means the bit length, n, is 16.
+
+For a signed integer using the standard Two's Complement representation, the formulas are:
+
+Minimum (Most Negative) Value: −2 
+n−1
+ 
+
+Maximum (Most Positive) Value: 2 
+n−1
+ −1
+
+2. Calculate the Exponent
+Since n=16, the exponent used in the formula is n−1:
+
+n−1=16−1=15
+3. Calculate 2 
+15
+ 
+First, we need to find the value of 2 
+15
+ :
+
+2 
+15
+ =32,768
+This number, 32,768, represents exactly half of all the total possible unique values (2 
+16
+ =65,536).
+
+4. Determine the Range
+Now, substitute 2 
+15
+  into the range formulas:
+
+Minimum Value (Most Negative):
+
+−2 
+n−1
+ =−2 
+15
+ =−32,768
+Why this value? In binary, the pattern 1000 0000 0000 0000 (where the leftmost '1' is the sign bit) represents the largest negative magnitude.
+
+Maximum Value (Most Positive):
+
+2 
+n−1
+ −1=32,768−1=32,767
+Why this value? In binary, the pattern 0111 1111 1111 1111 (where the leftmost '0' is the sign bit) represents the largest positive magnitude.
+
+The final range is −32,768 to 32,767
+
+//////////////////////////////////////////////////
+
+1. How −n is Calculated (Two's Complement)
+In computer systems, a negative number -n is represented using the Two's Complement of the positive number n. This calculation has two steps:
+
+Invert the bits (One's Complement): Flip every bit of n (change 0s to 1s, and 1s to 0s). This gives you ∼n.
+
+Add 1: Add 1 to the result of the inversion: ∼n+1=−n.
+
+This operation has a crucial side effect that is key to the trick:
+
+The operation ∼n+1 flips all bits ∗up to and including the rightmost ’1’ in n∗.
+2. Tracing the Bits (The Key Insight)
+Let's use an example, n=40 (in 8-bit binary) to see where the magic happens:
+
+Step	Value	Binary Representation	Observation
+n (Original)	40	…0010100	The lowest set bit is in the 2 
+3
+  position.
+1. Invert (∼n)	-41	…1101011	All bits are flipped.
+2. Add 1 (∼n+1)	−n=−40	…1101100	This changes all the trailing 1s (from the invert step) back to 0s, up to the location of the original lowest set bit.
+
+Export to Sheets
+Notice what happens at the location of the original lowest set bit (the 2 
+3
+  position, marked in bold):
+
+In n, the bit is 1.
+
+In -n, the bit is 1.
+
+All bits to the right of the lowest set bit are 0 in both n and −n.
+
+3. The Bitwise AND (&) Operation
+The final step is the Bitwise AND (&) between n and −n.
+
+The AND operation returns a 1 only if both corresponding bits are 1.
+
+n
+&−n
+Result
+​
+  
+…
+…
+…
+​
+  
+0010100
+1101100
+0010000
+​
+  
+(Original 40)
+(Two’s Complement of 40)
+(Decimal 8)
+​
+ 
+Let's look at the result:
+
+Bits to the left of the lowest set bit: One number has a 0 and the other has a 1 (or both are 0), so the AND result is 0.
+
+Bits to the right of the lowest set bit: Both numbers have a 0, so the AND result is 0.
+
+At the location of the lowest set bit: Both n and −n have a 1, so the AND result is 1.
+
+The final result, 0010000 (which is 8), is a number that has only the 2 
+3
+  bit set, which was the original lowest set bit of n=40.
+
+Summary
+The expression n&−n isolates the lowest set bit because:
+
+n has a '1' at the lowest set bit position and '0's to the right.
+
+−n is constructed in a way that it also has a '1' only at that same lowest set bit position, and '0's to the right.
+
+When you AND them together, the '1' at that specific position is the only bit that aligns with a '1' in both numbers, making it the only bit that survives the operation.
