@@ -1,3 +1,29 @@
+////////////////// Main Formulas /////////////
+(a) Get i-th bit
+(n >> i) & 1
+
+
+Example: n = 13 (1101), i = 2 → 1
+
+(b) Set i-th bit (force to 1)
+n | (1 << i)
+
+
+Example: n=13 (1101), set bit 1 → 1111 (15)
+
+(c) Clear i-th bit (force to 0)
+n & ~(1 << i)
+
+
+Example: n=13 (1101), clear bit 2 → 1001 (9)
+
+(d) Toggle i-th bit (flip 0 ↔ 1)
+n ^ (1 << i)
+
+
+Example: n=13 (1101), toggle bit 0 → 1100 (12
+
+
 ///Basic Bit Operations and Masks
 2.1 Core Bitwise Operators
 Operator	Symbol	Meaning (bit-level)
@@ -99,3 +125,104 @@ Example: n=13 (1101), toggle i=0
 n=1101
 Mask M=1≪0⟶0001
 1101 ∧ 0001⟶1100 (Decimal 12)
+
+
+practice - 1
+
+What is the binary result of 29 & 23?
+
+steps
+1. find both binary numbers
+2. addition that 
+3.we get result
+4.convert result to decimal adding 2's powers.
+
+& if both bits are 1 it is 1
+
+
+The binary result of 29&23 is 21.
+
+This is found by performing the Bitwise AND operation on the binary representations of the two numbers.
+
+Step-by-Step Calculation
+1. Convert to Binary
+First, convert the decimal numbers 29 and 23 into their binary representations. We can use 5 bits, as 2 
+4
+ =16 and 2 
+5
+ =32.
+
+29
+
+(1×16)+(1×8)+(1×4)+(0×2)+(1×1)=16+8+4+1=29
+29=11101 
+2
+​
+ 
+23
+
+(1×16)+(0×8)+(1×4)+(1×2)+(1×1)=16+4+2+1=23
+23=10111 
+2
+​
+ 
+2. Perform the Bitwise AND (&)
+The Bitwise AND operator (&) compares the corresponding bits of the two numbers. It only returns a 1 if both bits are 1. Otherwise, it returns 0.
+
+29
+&23
+Result
+​
+  
+1
+1
+1
+​
+  
+1
+0
+0
+​
+  
+1
+1
+1
+​
+  
+0
+1
+0
+​
+  
+1
+1
+1
+​
+ 
+​
+ 
+The binary result is 10101 
+2
+​
+ .
+
+3. Convert Result to Decimal
+Finally, convert the binary result 10101 
+2
+​
+  back to decimal:
+
+(1×16)+(0×8)+(1×4)+(0×2)+(1×1)=16+4+1=21
+
+
+
+
+
+2)For n = 21 (10101), set bit 1 and show the new decimal.
+
+The operation uses the formula: 
+
+n ∣ (1≪i) In your case, n=21 and i=1 (the 1 st  bit).
+Bitwise OR (∣) 
+
+
