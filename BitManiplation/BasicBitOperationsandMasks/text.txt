@@ -1,0 +1,101 @@
+///Basic Bit Operations and Masks
+2.1 Core Bitwise Operators
+Operator	Symbol	Meaning (bit-level)
+AND	&	1 if both bits are 1
+OR	`	`
+XOR	^	1 if bits differ
+NOT	~	Inverts all bits
+Shift L	<<	Shift left (×2ᵏ)
+Shift R	>>	Shift right (÷2ᵏ)
+
+
+2.2 Masks
+
+A mask = binary number used with AND/OR/XOR to manipulate specific bits.
+
+Bitwise masks are fundamental tools in computer programming, allowing you to manipulate specific bits within a binary number without affecting the others. They work by creating a temporary binary number (the mask) that has a '1' only at the position you want to change, and then using a bitwise operator (AND, OR, XOR) with the original number.
+
+Here is a step-by-step explanation for each operation, using the concept of a mask M=(1≪i).
+
+1. Creating the Mask (M)
+All these operations start by creating a mask M=(1≪i), which is a '1' shifted to the i-th position (counting from the right, starting at i=0).
+
+Example (i=2):1=0001
+Shift left by 2:1≪2=0100(Mask M)
+(a) Get i-th Bit (Check)
+(n≫i) & 1
+This operation determines if the i-th bit of n is a 0 or a 1.
+
+Shift Right (n≫i): The number n is shifted right by i positions. This moves the i-th bit all the way to the 2 
+0
+  (rightmost) position.
+
+AND with 1 (…&1): A bitwise AND with '1' is applied. Since 1=…0001, this operation clears (sets to 0) every bit except the rightmost bit.
+
+If the i-th bit was 1, the result will be 1.
+
+If the i-th bit was 0, the result will be 0.
+
+Example: n=13 (1101), i=2
+1101≫2⟶0011
+0011 & 0001⟶0001 (Decimal 1)
+Result: The 2nd bit is 1.
+
+Export to Sheets
+(b) Set i-th Bit (Force to 1)
+n ∣ (1≪i)
+This operation guarantees that the i-th bit in n will be a 1.
+
+Create Mask (M): A mask M is created with a '1' only at the i-th position.
+
+Bitwise OR (∣): The OR operation guarantees a '1' in the result if either operand has a '1' at that position.
+
+If n's i-th bit is already 1, ORing with M's '1' keeps it 1.
+
+If n's i-th bit is 0, ORing with M's '1' forces it to 1.
+
+All other bits are ORed with M's '0's and remain unchanged.
+
+Example: n=13 (1101), set i=1
+n=1101
+Mask M=1≪1⟶0010
+$1101 \
+
+Export to Sheets
+(c) Clear i-th Bit (Force to 0)
+n & ∼(1≪i)
+This operation guarantees that the i-th bit in n will be a 0.
+
+Create Mask (M): A mask M is created with a '1' only at the i-th position.
+
+Invert Mask (∼M): The mask is inverted, creating a new mask that is all '1's, except for a '0' at the i-th position.
+
+Bitwise AND (&): The AND operation guarantees a '0' in the result if either operand has a '0' at that position.
+
+At the i-th position, the inverted mask has a 0, which forces the result to 0, regardless of n's original bit.
+
+All other bits are ANDed with the inverted mask's '1's and remain unchanged.
+
+Example: n=13 (1101), clear i=2
+n=1101
+Mask M=1≪2⟶0100
+Inverted Mask ∼M⟶1011
+1101 & 1011⟶1001 (Decimal 9)
+
+Export to Sheets
+(d) Toggle i-th Bit (Flip 0 ↔ 1)
+n ∧ (1≪i)
+This operation flips the value of the i-th bit (0 becomes 1, and 1 becomes 0).
+
+Create Mask (M): A mask M is created with a '1' only at the i-th position.
+
+Bitwise XOR (∧): The XOR (Exclusive OR) operation returns a '1' if the two bits are different, and a '0' if they are the same.
+
+At the i-th position, XORing with the mask's 1 flips the bit (0 becomes 1, 1 becomes 0).
+
+All other bits are XORed with the mask's '0's and remain unchanged.
+
+Example: n=13 (1101), toggle i=0
+n=1101
+Mask M=1≪0⟶0001
+1101 ∧ 0001⟶1100 (Decimal 12)

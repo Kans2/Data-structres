@@ -581,3 +581,64 @@ n has a '1' at the lowest set bit position and '0's to the right.
 −n is constructed in a way that it also has a '1' only at that same lowest set bit position, and '0's to the right.
 
 When you AND them together, the '1' at that specific position is the only bit that aligns with a '1' in both numbers, making it the only bit that survives the operation.
+
+
+
+The answer to the question "Why does n & −n isolate the lowest set bit?" is that it leverages the properties of Two's Complement arithmetic, which is used to represent negative integers (−n).
+
+The expression n & −n works because:
+
+−n has the same bits as n up to and including the lowest set bit.
+
+−n flips all bits to the left of the lowest set bit.
+
+Detailed Breakdown
+Let's use an 8-bit example with n=12 (00001100).
+
+1. Identify the Lowest Set Bit (LSB)
+The lowest set bit in n=12 is the 2 
+2
+  bit (the third bit from the right):
+
+n=00001100
+2. Calculate −n using Two's Complement
+To get −n, you perform the following steps:
+
+Step	Operation	Binary	Result
+Start with n	Original Number	00001100	
+Flip the bits (∼n)	One's Complement	11110011	
+Add 1 (∼n+1)	Two's Complement	11110100	−12
+
+Export to Sheets
+Notice the pattern in −n:
+
+It has '0's to the right of the original LSB.
+
+It has a '1' at the original LSB position.
+
+3. Apply the Bitwise AND (&)
+The AND operation yields a '1' only where both n and −n have a '1'.
+
+n
+&−n
+Result
+​
+  
+00001100
+11110100
+00000100
+ 
+(12)
+(−12)
+(4)​
+ 
+4. Why it Isolates the Bit
+Bits to the right of the LSB: Both n and −n have '0's here, so the AND result is '0'.
+
+Bits to the left of the LSB: n and −n are complements of each other in this region (one has 000 and the other has 111), so the AND result is '0'.
+
+At the LSB position: Both n and −n have a '1' at this exact position, so the AND result is '1'.
+
+The final result is a binary number that has only the lowest set bit of the original number n turned on. In the example, 00000100 is the isolated 2 
+2
+  bit, which has a decimal value of 4.
